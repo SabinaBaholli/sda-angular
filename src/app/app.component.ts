@@ -1,4 +1,5 @@
 import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +8,11 @@ import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
 })
 export class AppComponent {
   title = 'myApp';
-  username;
+  user;
   password;
+  dateObj = new Date();
 
-  clickHandler() {
-    console.log(this.username, this.password);
+  onAddForm(formValue: NgForm) {
+    this.user = formValue.value.username;
   }
 }

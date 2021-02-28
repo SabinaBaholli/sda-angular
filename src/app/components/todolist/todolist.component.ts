@@ -8,10 +8,10 @@ import { BackendService } from 'src/app/services/backend.service';
 })
 export class TodolistComponent implements OnInit {
   newItem;
-  items = this.backendService.toDoItems;
+  items = this.bs.toDoItems;
 
   constructor(
-    private backendService: BackendService
+    private bs: BackendService
   ) { }
 
   ngOnInit() {
@@ -19,7 +19,7 @@ export class TodolistComponent implements OnInit {
   }
 
   addItem() {
-    this.backendService.toDoItems.push(this.newItem);
+    this.bs.toDoItems.push(this.newItem);
   }
 
 }

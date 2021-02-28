@@ -1,11 +1,20 @@
 <div>
-  <p>Please Log In</p>
-  <input [(ngModel)]="username">
+  <p>Please Log In </p>
   <br>
-  <input type="password" [(ngModel)]="password">
-  <button (click)="clickHandler()">Click</button>
+  <form #f="ngForm" (ngSubmit)="onAddForm(f)">
+    <input type="text" ngModel name="username" required>
+    <input type="password" ngModel name="password" required>
+    <button type="submit">Log In</button>
+  </form>
 </div>
 
+<div *ngIf="user && password">
+  Hello {{user | uppercase}}
+</div>
+
+<!-- <app-user [user]="'Brand'"></app-user> -->
+
+{{ dateObj | date:'medium' }}
 
 <app-todolist></app-todolist>
 <router-outlet></router-outlet>
