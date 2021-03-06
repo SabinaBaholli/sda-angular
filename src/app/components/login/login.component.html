@@ -1,0 +1,11 @@
+<div class="center">
+    <p>Please Log In </p>
+    <br>
+    <form #f="ngForm" (ngSubmit)="onAddForm(f)">
+      <input type="text" ngModel name="username" required>
+      <br><br>
+      <input type="password" ngModel name="password" required>
+      <br>
+      <button type="submit">Log In</button>
+    </form>
+  </div>

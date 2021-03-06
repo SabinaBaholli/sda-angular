@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+button {
+    padding: 7px;
+    margin: 10px;
+    background-color: #2020b9;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+}

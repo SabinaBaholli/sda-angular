@@ -1,20 +1,15 @@
-<div>
-  <p>Please Log In </p>
-  <br>
-  <form #f="ngForm" (ngSubmit)="onAddForm(f)">
-    <input type="text" ngModel name="username" required>
-    <input type="password" ngModel name="password" required>
-    <button type="submit">Log In</button>
-  </form>
-</div>
+<nav *ngIf="backendService.isLoggedIn">
+    <div class="container">
+        <ul class="nav navbar-nav" routerLinkActive="active">
+            <li class="nav-item"><a class="nav-link" routerLink="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="todo">To Do List</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="user">User Profile</a></li>
+            <li  class="nav-item" (click)=logOut()>Log Out</li>
+        </ul>
+    </div>
+</nav>
 
-<div *ngIf="user && password">
-  Hello {{user | uppercase}}
-</div>
+<app-login *ngIf="!backendService.isLoggedIn"></app-login>
 
-<!-- <app-user [user]="'Brand'"></app-user> -->
 
-{{ dateObj | date:'medium' }}
-
-<app-todolist></app-todolist>
 <router-outlet></router-outlet>

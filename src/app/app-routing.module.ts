@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { TodolistComponent } from './components/todolist/todolist.component';
+import { UserComponent } from './components/user/user.component';
 
 const routes: Routes = [
-  { path: '', component: AppComponent },
-  { path: 'todo', component: TodolistComponent }
+  { path: 'todo', component: TodolistComponent },
+  { path: 'user', component: UserComponent }
 ];
 
 @NgModule({

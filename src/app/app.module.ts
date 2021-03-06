@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { TodolistComponent } from './components/todolist/todolist.component';
 import { ListItemComponent } from './components/list-item/list-item.component';
 import { UserComponent } from './components/user/user.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodolistComponent,
     ListItemComponent,
-    UserComponent
+    UserComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
