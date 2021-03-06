@@ -1,10 +1,17 @@
-<h1>My ToDo List</h1>
-<div>
-    <ol>
-    <app-list-item  [item]="it" *ngFor="let it of items">
-    </app-list-item>
-    </ol>
-</div>
+<div *ngIf="backendService.isLoggedIn">
+    <h1>My ToDo List</h1>
+    <div>
+        <ol>
+        <app-list-item  [item]="it" *ngFor="let it of items">
+        </app-list-item>
+        </ol>
+    </div>
 
-<input [(ngModel)]="newItem">
-<button (click)="addItem()">Add</button>
+    <form #f="ngForm" (ngSubmit)="addItem(f)">
+        <input type="text" ngModel name="title" required>
+        <br><br>
+        <input type="text" ngModel name="description" required>
+        <br>
+        <button type="submit">Add Item</button>
+    </form>
+</div>

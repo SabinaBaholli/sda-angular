@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   onAddForm(formValue: NgForm) {
     this.user = formValue.value.username;
     this.backendService.isLoggedIn = true;
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('home');
   }
 
 }
